@@ -3,18 +3,31 @@ import { SafeAreaView, StyleSheet,View, Text, TouchableHighlight, TextInput } fr
 
 export default function App() {
 
-  const[valor, setValor]=useState(0)
+  const[valor1, setValor1]=useState(0)
+  const[valor2, setValor2]=useState(0)
+
+
   return (
-    <SafeAreaView>
+    <SafeAreaView StyleSheet={estilos.conteiner}>
       <Text style={styles.title}>Calculadora</Text>
     <TextInput
+    style={estilos.display}
     value={string(valor)}
-    > 
-    </TextInput>
+    onChangeText={(texto)=> {setValor(texto)}}
+
+    ></TextInput>
     </SafeAreaView>
   );
 };
 
 const estilos = StyleSheet.create({
+  conteiner: {
+    padding:10
+  },
+  display:{
+    borderWidth:1,
+    borderRadius:10,
+    padding: 10,
+  }
 
 });
