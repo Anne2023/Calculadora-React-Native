@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { SafeAreaView, StyleSheet, Switch, Text } from 'react-native';
-import { myColors } from './src/styles/Colors';
+import { myColors } from './src/style/cores';
 import { ThemeContext } from './src/context/ThemeContext';
-import MyKeyboard from './src/components/MyKeyboard';
+import MyKeyboard from './src/componentes/MyKeyboard';
 
 
 
