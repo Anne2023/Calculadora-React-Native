@@ -1,33 +1,31 @@
-import React, {useState} from "react";
-import { SafeAreaView, StyleSheet,View, Text, TouchableHighlight, TextInput } from "react-native";
+import { useState } from 'react';
+import { SafeAreaView, StyleSheet, Switch, Text } from 'react-native';
+import { myColors } from './src/styles/Colors';
+import { ThemeContext } from './src/context/ThemeContext';
+import MyKeyboard from './src/components/MyKeyboard';
+
+
 
 export default function App() {
-
-  const[valor1, setValor1]=useState(0)
-  const[valor2, setValor2]=useState(0)
-
-
+  const [theme, setTheme] = useState('light');
   return (
-    <SafeAreaView StyleSheet={estilos.conteiner}>
-      <Text style={styles.title}>Calculadora</Text>
-    <TextInput
-    style={estilos.display}
-    value={string(valor)}
-    onChangeText={(texto)=> {setValor(texto)}}
-
-    ></TextInput>
-    </SafeAreaView>
+    <ThemeContext.Provider value={theme}>
+      <SafeAreaView style={theme === 'light' ? styles.container : [styles.container, {backgroundColor: 'black'}]}>
+        <Switch
+          value={theme === 'dark'}
+          onValueChange={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+        />
+        <MyKeyboard />
+      </SafeAreaView>
+    </ThemeContext.Provider>
   );
-};
+}
 
-const estilos = StyleSheet.create({
-  conteiner: {
-    padding:10
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: myColors.light,
+    alignItems: 'center',
+    justifyContent: 'flex-start',
   },
-  display:{
-    borderWidth:1,
-    borderRadius:10,
-    padding: 10,
-  }
-
 });
