@@ -2,7 +2,7 @@ import * as React from "react";
 import Button from "./button";
 import { View, Text } from "react-native";
 import { Styles } from "../style/GlobalStyles";
-import { myColors } from "../style/cores";
+import { myColors } from "../style/Colors";
 
 export default function MyKeyboard() {
   const [firstNumber, setFirstNumber] = React.useState("");
@@ -103,13 +103,13 @@ export default function MyKeyboard() {
         <Button title="÷" isBlue onPress={() => handleOperationPress("/")} />
       </View>
       <View style={Styles.row}>
-        <Button title="7" onPress={() => handleNumberPress("7")} />
-        <Button title="8" onPress={() => handleNumberPress("8")} />
-        <Button title="9" onPress={() => handleNumberPress("9")} />
-        <Button title="×" isBlue onPress={() => handleOperationPress("*")} />
+      <Button title="7" onPress={() => handleNumberPress("7")} />
+      <Button title="8" onPress={() => handleNumberPress("8")} />
+      <Button title="9" onPress={() => handleNumberPress("9")} />
+      <Button title="×" isBlue onPress={() => handleOperationPress("*")} />
       </View>
       <View style={Styles.row}>
-        <Button title="4" onPress={() => handleNumberPress("4")} />
+      <Button title="4" onPress={() => handleNumberPress("4")} />
         <Button title="5" onPress={() => handleNumberPress("5")} />
         <Button title="6" onPress={() => handleNumberPress("6")} />
         <Button title="-" isBlue onPress={() => handleOperationPress("-")} />
